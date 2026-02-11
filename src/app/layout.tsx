@@ -1,6 +1,10 @@
 import "./globals.css";
-import Navbar from "../components/layout/Navbar";
-import Footer from "../components/layout/Footer";
+import "aos/dist/aos.css";
+
+import Navbar from "./layout/Navbar";
+import Footer from "./layout/Footer";
+
+import AOSProvider from "./AOSProvider";
 
 export const metadata = {
   title: "Divya Prakash Foundation",
@@ -13,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" >
       <body className="bg-white text-[#111D15]">
         <Navbar />
         {children}
