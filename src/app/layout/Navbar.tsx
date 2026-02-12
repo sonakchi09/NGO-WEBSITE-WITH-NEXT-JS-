@@ -34,10 +34,25 @@ export default function Navbar() {
           scrolled ? "bg-white shadow-md" : "bg-transparent"
         }`}
       >
-        <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <Link href="/" className="text-xl font-bold text-[#111D15]">
-            Divya Prakash Foundation
-          </Link>
+       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+
+  {/* Left Side */}
+  <div className="flex items-center gap-3">
+    <img 
+      src="/images/logo.png" 
+      alt="Logo" 
+      className="w-12 h-12 object-contain" 
+    />
+
+    <Link href="/" className="text-xl font-bold text-[#111D15]">
+      Divya Prakash Foundation
+    </Link>
+  </div>
+
+  {/* Right Side (your nav links / donate button) */}
+  
+
+
 
           {/* Desktop links */}
           <ul className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">

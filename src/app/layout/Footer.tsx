@@ -16,8 +16,7 @@ export default function Footer() {
               Divya Prakash Foundation
             </h3>
             <p className="text-sm leading-relaxed">
-              Together for change, building a brighter future through
-              compassion, education, and community-driven initiatives.
+              A smile on everyone's face
             </p>
           </div>
 

@@ -27,40 +27,40 @@ export default function VolunteerFormModal({
       {/* Modal */}
       <div className="relative bg-white rounded-xl shadow-xl w-[90%] max-w-lg p-6 sm:p-8 animate-scaleIn">
         <h2 className="text-2xl font-bold text-center mb-4">
-          Become a Volunteer 💚
+          Make an Impact
         </h2>
 
         <form className="space-y-4">
           <input
             type="text"
             placeholder="Full Name"
-            className="w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 border-black"
             required
           />
 
           <input
             type="email"
             placeholder="Email Address"
-            className="w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500  border-black"
             required
           />
 
           <input
             type="tel"
             placeholder="Phone Number"
-            className="w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500  border-black"
             required
           />
 
           <input
             type="text"
             placeholder="City / Location"
-            className="w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500  border-black"
             required
           />
 
           <select
-            className="w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500  border-black"
             required
           >
             <option value="">How can you help?</option>
@@ -74,7 +74,7 @@ export default function VolunteerFormModal({
           <textarea
             placeholder="Why do you want to volunteer?"
             rows={3}
-            className="w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500  border-black"
           />
 
           <div className="flex gap-3 pt-2">

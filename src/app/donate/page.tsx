@@ -1,65 +1,91 @@
 "use client";
 
 import { useState } from "react";
-import Stepper from "./Stepper";
+import { LuLock, LuShieldCheck, LuCreditCard, LuFileText } from "react-icons/lu";
 import AmountStep from "./AmountStep";
 import InfoStep from "./InfoStep";
-import PaymentStep from "./PaymentStep";
 
 export default function DonatePage() {
-  const [step, setStep] = useState(1);
+  const [showForm, setShowForm] = useState(false);
   const [selectedAmount, setSelectedAmount] = useState<number | null>(null);
 
   return (
-    <section className="bg-[#f7f9fb] py-16 px-4">
-      <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-sm p-10">
+    <section className="min-h-screen bg-[#f3f4f6] flex items-start justify-center px-4 py-10">
 
-        <h1 className="text-4xl font-bold text-[#1e293b] text-center">
-          Make a Difference Today
-        </h1>
+      <div className="max-w-5xl w-full grid md:grid-cols-2 gap-6">
 
-        <p className="text-gray-500 text-center mt-4 max-w-2xl mx-auto">
-          Your generosity creates lasting change. Every donation brings hope
-          and transforms lives.
-        </p>
+        {/* LEFT BOX */}
+        {/* LEFT BOX */}
+<div className="bg-orange-600 text-white rounded-xl p-8 shadow-lg h-[520px]">
 
-        <Stepper currentStep={step} />
+          <h1 className="text-3xl font-bold leading-snug">
+            <span className="text-black">Give Hope.</span> <br />
+            Change Lives.
+          </h1>
 
-        <div className="mt-14">
-          {/* STEP 1 */}
-          {step === 1 && (
-            <AmountStep
-              selectedAmount={selectedAmount}
-              setSelectedAmount={setSelectedAmount}
-            />
-          )}
+          <p className="mt-4 text-sm text-orange-100">
+            Your contribution supports food, education and emergency relief
+            for families in need.
+          </p>
 
-          {/* STEP 2 */}
-          {step === 2 && <InfoStep />}
+          <div className="mt-6 space-y-4 text-xs text-orange-100">
+            <div className="flex items-center gap-2">
+              <LuLock className="text-base text-[#2E8B57]" />
+              <span>100% Secure Payments</span>
+            </div>
 
-          {/* STEP 3 */}
-          {step === 3 && (
-            <PaymentStep amount={selectedAmount ?? 0} />
-          )}
+            <div className="flex items-center gap-2">
+              <LuShieldCheck className="text-base text-[#2E8B57]" />
+              <span>Fully Encrypted Transactions</span>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <LuCreditCard className="text-base text-[#2E8B57]" />
+              <span>Trusted Payment Gateway</span>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <LuFileText className="text-base text-[#2E8B57]" />
+              <span>Instant Donation Receipt</span>
+            </div>
+          </div>
         </div>
 
-        {/* Navigation */}
-        <div className="flex justify-between mt-10">
-          <button
-            onClick={() => setStep(step - 1)}
-            disabled={step === 1}
-            className="px-6 py-3 rounded-md border text-gray-600 disabled:opacity-40"
-          >
-            Back
-          </button>
+        {/* RIGHT BOX */}
+        {/* RIGHT BOX */}
+<div className="bg-[#f8f5f0] rounded-xl p-8 shadow-lg h-[520px] overflow-y-auto">
 
-          <button
-            onClick={() => setStep(step + 1)}
-            disabled={step === 3 || !selectedAmount}
-            className="px-8 py-3 rounded-md bg-green-600 hover:bg-green-700 text-white font-medium disabled:opacity-40"
-          >
-            Continue
-          </button>
+          <div className="max-w-md mx-auto">
+
+            {!showForm ? (
+              <AmountStep
+                selectedAmount={selectedAmount}
+                setSelectedAmount={setSelectedAmount}
+              />
+            ) : (
+              <InfoStep />
+            )}
+
+            <div className="mt-6">
+              {!showForm ? (
+                <button
+                  onClick={() => setShowForm(true)}
+                  disabled={!selectedAmount}
+                  className="w-full bg-orange-600 hover:bg-orange-700 text-white py-2.5 text-sm rounded-md font-medium disabled:opacity-40"
+                >
+                  Continue
+                </button>
+              ) : (
+                <button
+                  onClick={() => setShowForm(false)}
+                  className="w-full border border-gray-300 py-2.5 text-sm rounded-md text-gray-600"
+                >
+                  Back
+                </button>
+              )}
+            </div>
+
+          </div>
         </div>
 
       </div>
